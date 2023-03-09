@@ -1,4 +1,4 @@
-import { baseUrl } from "/src/scripts/variables.js"
+import { baseUrl } from "../variables.js"
 
 /* BUSCA DADOS DO USUÁRIO */
 async function getUser(userName){
