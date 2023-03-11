@@ -35,6 +35,8 @@ async function getUserData(userName){
 
     const userResponse = await getUser(userName)//puxo os dados da API
 
+    console.log(userResponse)
+
     if(userResponse.message === "Not Found"){
         screen.renderNotFound()
         return

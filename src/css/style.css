@@ -121,6 +121,33 @@ main {
   line-height: 23px;
 }
 
+/* Seguidores e Seguindo */ 
+
+.container .profile-data  .followers-and-following{
+  display: flex;
+  margin-top: 30px;
+}
+
+.container .profile-data  .followers-and-following div{
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+}
+
+.container .profile-data  .followers-and-following .followers{
+  background-color: hotpink;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.container .profile-data  .followers-and-following .following{
+  background-color: #24292e;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
 /* REPOSITORIES */
 
 .container .profile-data .repositories h2{
@@ -192,5 +219,21 @@ main {
     width: 100%;
     padding: 0;
   }
+
+  .container .profile-data  .followers-and-following div{
+    padding: 10px 20px;
+  }
 }
 
+@media (max-width: 393px){
+  .container .profile-data  .followers-and-following div{
+    padding: 10px 11px;
+  }
+}
+
+@media (max-width: 320px){
+  .container .profile-data  .followers-and-following div{
+    padding: 8px 7px;
+    font-size: 14px;
+  }
+}
