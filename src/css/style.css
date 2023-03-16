@@ -11,7 +11,7 @@ img {
 }
 
 body {
-  background-color:#24292e;
+  background-color: var(--background-color);
   font-family: "Kumbh Sans", sans-serif;  
   text-align: center;    
   padding-bottom: 100px;
@@ -27,7 +27,7 @@ main {
 .devicon-github-original{
   font-size: 60px;
   margin-bottom: 30px;
-  color: #FFFFFF;
+  color: var(--github-icon-color);
 }
 
 .section{
@@ -38,7 +38,7 @@ main {
   width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
   max-width: 960px; /* quando chegar em 980px para de aumentar */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
-  background-color: #fff;
+  background-color: var(--github-icon-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,7 @@ main {
   margin: 0 auto;
   padding: 10px;
   border-radius: 7px;
-  border: 1px solid grey;
+  border: 1px solid var(--border-inputs);
 }
 
 .container header #btn-search {
@@ -76,13 +76,13 @@ main {
   padding: 10px;
   border-radius: 7px;  
   cursor: pointer;
-  border: 1px solid grey;
+  border: 1px solid var(--border-inputs);
 }
 
 .container header #btn-search:hover {
-  background-color: hotpink;
-  color: #ffffff;
-  border-color: #ffffff;
+  background-color: var(--background-color-repositories-hover);
+  color: var(--github-icon-color);
+  border-color: var(--github-icon-color);
 }
 
 .container .profile-data{
@@ -106,7 +106,7 @@ main {
 .container .profile-data .info img{
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid var(--background-color-repositories-hover);
 }
 
 .container .profile-data .info h1{
@@ -133,17 +133,17 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #fff;
+  color: var(--github-icon-color);
 }
 
 .container .profile-data  .followers-and-following .followers{
-  background-color: hotpink;
+  background-color: var(--background-color-repositories-hover);
   border-bottom-left-radius: 7px;
   border-top-left-radius: 7px;
 }
 
 .container .profile-data  .followers-and-following .following{
-  background-color: #24292e;
+  background-color: var(--background-color);
   border-bottom-right-radius: 7px;
   border-top-right-radius: 7px;
 }
@@ -163,7 +163,7 @@ main {
 
 .container .profile-data .repositories ul li a{
   padding: 20px;
-  border: 1px solid grey;  
+  border: 1px solid var(--border-inputs);  
   margin: 20px;
   display: block;
   border-radius: 7px;
@@ -171,69 +171,50 @@ main {
 }
 
 .container .profile-data .repositories ul li a:hover{
-  background-color:hotpink;
-  color: #fff
+  background-color: var(--background-color-repositories-hover);
+  color: var(--github-icon-color);
+}
+
+.container .profile-data .repositories ul li a .icon-list{
+  margin-top: 8px;
+  display: flex;
+  gap: 5px;
+}
+
+.container .profile-data .repositories ul li a .icon-list li{
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .container .profile-data.hide{
   display: none;
 }
 
-@media (max-width: 1280px) {
-  .container {
-    flex-direction: column;
-    width: 90%;
-    border-radius: 20px;
-  }
+/* Eventos */
 
-  .container header {
-    width: 100%;
-  }
-
-  .container header h1 {
-    font-size: 24px;
-    text-align: center;
-  }
+.profile-data .events{
+  background-color: var(--backgroud-color-events);
+  padding: 20px;
+  border-radius: 7px;
 }
 
-@media (max-width: 768px) {
-  .container header #input-search,
-  .container header #btn-search
-  {
-    width: 100%;
-  }
+.profile-data .events h2{
+  padding-bottom: 10px;
 }
 
-@media (max-width: 425px) {
-  main {
-    padding: 15% 0;    
-  }
-
-  .container .profile-data .info img{
-    margin-bottom: 20px;
-  }
-
-  .container .profile-data .info img,
-  .container .profile-data .info .data
-  {
-    width: 100%;
-    padding: 0;
-  }
-
-  .container .profile-data  .followers-and-following div{
-    padding: 10px 20px;
-  }
+.profile-data .events .events-list li{
+  padding: 4px;
+  margin-bottom: 2px;
+  font-size: 15px;
 }
 
-@media (max-width: 393px){
-  .container .profile-data  .followers-and-following div{
-    padding: 10px 11px;
-  }
+.profile-data .events .events-list li:nth-child(odd){
+  background-color: var(--background-color);
+  color: var(--github-icon-color);
+  border-radius: 2px;
 }
 
-@media (max-width: 320px){
-  .container .profile-data  .followers-and-following div{
-    padding: 8px 7px;
-    font-size: 14px;
-  }
+.profile-data .events .events-list li p{
+  font-weight: 700;
 }

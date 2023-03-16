@@ -20,13 +20,51 @@ const screen = {
                         </div>`
         
         let repositoriesItens = ''
-        user.repositories.forEach(repo => repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`);
+        user.repositories.forEach(repo => {
+            repositoriesItens += `<li><a href="${repo.html_url}" target="_blank">
+                <p>${repo.name}</p>
+                <ul class="icon-list">
+                    <li><i class="fa-sharp fa-solid fa-code-fork"> ${repo.forks} </i></li>
+                    <li>|</li>
+                    <li><i class="fa-solid fa-star"> ${repo.stargazers_count
+                    } </i></li>
+                    <li>|</li>
+                    <li><i class="fa-solid fa-eye"> ${repo.watchers} </i></li>
+                    <li>|</li>
+                    <li><i class="fa-solid fa-laptop-code"></i><p>${repo.language
+                    }</p></li>
+                </ul>
+            </a>`
+        });
 
         if(user.repositories.length > 0){
             this.userInfo.innerHTML += `<div class="repositories section">
                                                 <h2>Repositórios</h2>
                                                 <ul>${repositoriesItens}</ul>
                                             </div>`
+        }
+
+        let eventItens = ""
+        user.events.forEach(event => {
+            if(event.type === "PushEvent"){
+                eventItens += `<li>
+                                    <p>${event.repo.name} - </p>
+                                    ${event.payload.commits[0].message}
+                                </li>`
+                                
+            } else {
+                eventItens += `<li>
+                                    <p>${event.repo.name} - </p>
+                                    ${event.payload.description}
+                                </li>`
+            }
+        });
+
+        if(user.events.length > 0){
+            this.userInfo.innerHTML += `<div class="events">
+                                            <h2>Eventos</h2>
+                                            <ul class="events-list">${eventItens}</ul>
+                                        </div>`
         }
     },
     renderNotFound(){
